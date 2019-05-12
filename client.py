@@ -20,6 +20,7 @@ class User:
         print(response)
         if not response['response'] == 200:
             raise Exception('Connection Error')
+        return response
 
     def send_message(self, to=None, msg=None):
         if to is not None and msg is not None:
@@ -46,10 +47,10 @@ class User:
 
 
 user1 = User('DrZak')
-user1.connect()
-while True:
-    time.sleep(1)
-    user1.send_message('admin', 'RTFM')
-    message = user1.get_message()
-    print(message)
+# user1.connect()
+# while True:
+#     time.sleep(1)
+#     user1.send_message('admin', 'RTFM')
+#     message = user1.get_message()
+#     print(message)
 
